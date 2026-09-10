@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Desk — автоматизация сбора и обработки внешних данных для бизнеса</title>
+  <meta name="description" content="Собираем данные из сайтов, маркетплейсов, карт и других публичных источников, приводим к единому формату, проверяем качество и готовим регулярные выгрузки под рабочий процесс бизнеса.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Data Desk">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Data Desk — автоматизация сбора и обработки внешних данных для бизнеса">
+  <meta property="og:description" content="Сайты, маркетплейсы, карты и нестандартные публичные источники. Сбор, нормализация, QA и готовая выгрузка под рабочий процесс.">
+  <meta property="og:image" content="favicon.svg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Data Desk — внешние данные для бизнеса">
+  <meta name="twitter:description" content="Сбор, нормализация, QA и регулярная выгрузка данных из публичных источников.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header" id="site-header">
+  <div class="container header__inner">
+    <a class="brand" href="#top" aria-label="Data Desk — в начало страницы">
+      <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <line x1="2" y1="10" x2="14" y2="10" stroke="currentColor" stroke-width="2.5" class="brand__flow brand__flow--a"/>
+        <line x1="2" y1="20" x2="14" y2="20" stroke="currentColor" stroke-width="2.5" class="brand__flow brand__flow--b"/>
+        <line x1="2" y1="30" x2="14" y2="30" stroke="currentColor" stroke-width="2.5" class="brand__flow brand__flow--c"/>
+        <path d="M14 10c4 0 4 10 8 10m-8 10c4 0 4-10 8-10" fill="none" stroke="currentColor" stroke-width="2"/>
+        <rect x="22" y="8" width="16" height="24" fill="none" stroke="currentColor" stroke-width="2.5"/>
+        <line x1="30" y1="8" x2="30" y2="32" stroke="currentColor" stroke-width="2"/>
+        <line x1="22" y1="20" x2="38" y2="20" stroke="currentColor" stroke-width="2"/>
+        <rect x="30" y="8" width="8" height="12" fill="currentColor" class="brand__cell"/>
+      </svg>
+      <span class="brand__text">
+        <span class="brand__name">Data&nbsp;Desk</span>
+        <span class="brand__sub mono">внешние данные для бизнеса</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Основная навигация">
+      <ul class="main-nav__list">
+        <li><a class="main-nav__link" href="#cases">Кейсы</a></li>
+        <li><a class="main-nav__link" href="#tasks">Задачи</a></li>
+        <li><a class="main-nav__link" href="#process">Процесс</a></li>
+        <li><a class="main-nav__link" href="#tools">Инструменты</a></li>
+        <li><a class="main-nav__link" href="#contacts">Контакт</a></li>
+      </ul>
+      <a class="btn btn--accent header__cta" href="https://t.me/persconnect" target="_blank" rel="noopener noreferrer">Обсудить задачу</a>
+    </nav>
+
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Открыть меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <p class="kicker mono" data-reveal>Внешние данные → готовый бизнес-результат</p>
+        <h1 class="hero__title" data-reveal>Автоматизация сбора и&nbsp;обработки внешних данных для&nbsp;бизнеса</h1>
+        <p class="hero__lead" data-reveal>Сайты, маркетплейсы, карты и&nbsp;нестандартные публичные источники. Сбор, нормализация, QA и&nbsp;готовая выгрузка под рабочий процесс.</p>
+        <div class="hero__actions" data-reveal>
+          <a class="btn btn--accent" href="https://t.me/persconnect" target="_blank" rel="noopener noreferrer">Обсудить задачу</a>
+          <a class="btn btn--ghost" href="#cases">Посмотреть кейсы</a>
+        </div>
+        <ul class="hero__chips" data-reveal>
+          <li class="chip"><span class="chip__dot" aria-hidden="true"></span>Сбор из публичных источников</li>
+          <li class="chip"><span class="chip__dot" aria-hidden="true"></span>Единый формат данных</li>
+          <li class="chip"><span class="chip__dot" aria-hidden="true"></span>Регулярное обновление</li>
+        </ul>
+      </div>
+
+      <figure class="hero__visual" data-reveal>
+        <div class="dataflow">
+          <div class="dataflow__bar mono">
+            <span>pipeline · sources → result</span>
+            <span class="dataflow__status"><i aria-hidden="true"></i>running</span>
+          </div>
+
+          <ul class="dataflow__sources">
+            <li class="src">
+              <span class="src__ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 9h18" stroke="currentColor" stroke-width="1.8" fill="none"/></svg>
+              </span>
+              <span class="src__name">Маркетплейсы</span>
+              <span class="src__meta mono">товары · продавцы · отзывы</span>
+            </li>
+            <li class="src">
+              <span class="src__ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+              </span>
+              <span class="src__name">Карты и организации</span>
+              <span class="src__meta mono">карточки · рейтинги</span>
+            </li>
+            <li class="src">
+              <span class="src__ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c-5.5 5.4-5.5 12.6 0 18M12 3c5.5 5.4 5.5 12.6 0 18" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+              </span>
+              <span class="src__name">Сайты</span>
+              <span class="src__meta mono">каталоги · страницы</span>
+            </li>
+            <li class="src">
+              <span class="src__ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="1.8" fill="none"/></svg>
+              </span>
+              <span class="src__name">Листы ожидания</span>
+              <span class="src__meta mono">лоты · объявления</span>
+            </li>
+          </ul>
+
+          <div class="flow-arrow mono" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 4v16M6 14l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            <span>сбор</span>
+          </div>
+
+          <div class="dataflow__process mono">
+            <span class="pchip">нормализация</span>
+            <span class="pchip">дедупликация</span>
+            <span class="pchip">QA-проверки</span>
+            <span class="pchip">human review</span>
+          </div>
+
+          <div class="flow-arrow mono" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 4v16M6 14l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            <span>результат</span>
+          </div>
+
+          <div class="dataflow__out">
+            <div class="out__head mono">
+              <span>единый датасет</span>
+              <span class="out__badge">QA ok</span>
+            </div>
+            <div class="out__rows" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span class="cell-dot"></span>
+              <span></span><span></span><span></span><span></span><span class="cell-dot"></span>
+              <span></span><span></span><span></span><span></span><span class="cell-dot cell-dot--soft"></span>
+            </div>
+            <div class="out__exports mono">
+              <span>Excel</span><span>Sheets</span><span>CSV</span>
+            </div>
+          </div>
+        </div>
+        <figcaption class="hero__caption mono">
+          <span>источники → обработка → выгрузка</span>
+          <span>рис. 01 / data pipeline</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================= PROOF STRIP ================= -->
+  <section class="proof" aria-label="Показатели из реальных работ">
+    <div class="container proof__inner">
+      <div class="proof__item" data-reveal>
+        <span class="proof__num mono">8</span>
+        <span class="proof__label">источников в&nbsp;регулярном сборе</span>
+      </div>
+      <div class="proof__item" data-reveal>
+        <span class="proof__num mono">1&nbsp;310</span>
+        <span class="proof__label">проверенных точек</span>
+      </div>
+      <div class="proof__item" data-reveal>
+        <span class="proof__num mono">4&nbsp;312</span>
+        <span class="proof__label">отзывов в&nbsp;накопленном массиве</span>
+      </div>
+      <div class="proof__item" data-reveal>
+        <span class="proof__num mono">72</span>
+        <span class="proof__label">датированных среза мониторинга</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= КЕЙСЫ ================= -->
+  <section class="section cases" id="cases">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <p class="kicker mono" data-reveal>01 / Кейсы</p>
+          <h2 class="section__title" data-reveal>Реальные задачи с&nbsp;внешними данными</h2>
+        </div>
+        <p class="section__text section__text--aside" data-reveal>Каждый кейс — про конкретный источник, конкретные поля и конкретный формат результата.</p>
+      </div>
+
+      <div class="cases__grid">
+
+        <article class="case-card case-card--w7 case-card--feature" data-reveal>
+          <div class="case-card__viz" aria-hidden="true">
+            <svg viewBox="0 0 320 120" preserveAspectRatio="xMidYMid meet">
+              <rect x="8" y="12" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6"/>
+              <rect x="8" y="38" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6"/>
+              <rect x="8" y="64" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6"/>
+              <rect x="8" y="90" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M22 19c26 0 26 41 48 41M22 45c26 0 26 15 48 15M22 71c26 0 26-11 48-11M22 97c26 0 26-37 48-37" fill="none" stroke="currentColor" stroke-width="1.4"/>
+              <rect x="70" y="46" width="34" height="30" rx="2" fill="none" stroke="var(--accent-bright)" stroke-width="1.8"/>
+              <path d="M104 61h30" fill="none" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M134 47l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.6"/>
+              <rect x="146" y="20" width="166" height="82" fill="none" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M146 36h166M146 54h166M146 72h166M146 88h166M200 20v82M254 20v82" fill="none" stroke="currentColor" stroke-width="1"/>
+              <rect x="200" y="20" width="54" height="16" fill="var(--accent-deep)"/>
+              <rect x="254" y="54" width="58" height="18" fill="var(--accent-deep)"/>
+            </svg>
+            <span class="case-card__legend mono">sources → normalize → dataset</span>
+          </div>
+          <div class="case-card__body">
+            <div class="case-card__top mono"><span>CASE / 01</span><span class="case-card__tag">маркетплейсы · e-commerce</span></div>
+            <h3 class="case-card__title">Система сбора и подготовки данных с маркетплейсов и интернет-магазинов</h3>
+            <p class="case-card__lead">Единый контур сбора и нормализации данных из нескольких источников для регулярной аналитической работы.</p>
+            <ul class="case-card__facts">
+              <li class="fact"><b>8</b> активных источников</li>
+              <li class="fact"><b>8</b> кварталов</li>
+              <li class="fact"><b>10&nbsp;+&nbsp;19</b> полей товара и отзыва</li>
+            </ul>
+            <a class="case-card__link mono" href="https://github.com/petr-sidorov/multi-source-data-case-study" target="_blank" rel="noopener noreferrer">Подробнее о кейсе <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <article class="case-card case-card--w5" data-reveal>
+          <div class="case-card__viz" aria-hidden="true">
+            <svg viewBox="0 0 320 120" preserveAspectRatio="xMidYMid meet">
+              <path d="M14 100h292" fill="none" stroke="currentColor" stroke-width="1.2"/>
+              <rect x="24" y="80" width="14" height="20" fill="currentColor"/>
+              <rect x="50" y="70" width="14" height="30" fill="currentColor"/>
+              <rect x="76" y="58" width="14" height="42" fill="currentColor"/>
+              <rect x="102" y="62" width="14" height="38" fill="currentColor"/>
+              <rect x="128" y="46" width="14" height="54" fill="currentColor"/>
+              <rect x="154" y="40" width="14" height="60" fill="currentColor"/>
+              <rect x="180" y="50" width="14" height="50" fill="var(--accent)"/>
+              <rect x="206" y="32" width="14" height="68" fill="var(--accent)"/>
+              <rect x="232" y="24" width="14" height="76" fill="var(--accent)"/>
+              <g>
+                <rect x="268" y="26" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="284" y="26" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="268" y="42" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="284" y="42" width="10" height="10" fill="var(--accent-deep)"/>
+              </g>
+            </svg>
+            <span class="case-card__legend mono">products · sellers · ratings · history</span>
+          </div>
+          <div class="case-card__body">
+            <div class="case-card__top mono"><span>CASE / 02</span><span class="case-card__tag">розничный мониторинг</span></div>
+            <h3 class="case-card__title">Регулярный мониторинг ассортимента и отзывов M.Video</h3>
+            <p class="case-card__lead">Регулярный сбор данных по товарам, продавцам, рейтингам и отзывам с накоплением истории.</p>
+            <ul class="case-card__facts">
+              <li class="fact"><b>4&nbsp;312</b> отзывов в накопленном массиве</li>
+              <li class="fact"><b>25</b> продавцов в текущем срезе</li>
+            </ul>
+            <a class="case-card__link mono" href="https://github.com/petr-sidorov/retail-monitoring-case-study" target="_blank" rel="noopener noreferrer">Подробнее о кейсе <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <article class="case-card case-card--w5" data-reveal>
+          <div class="case-card__viz" aria-hidden="true">
+            <svg viewBox="0 0 320 120" preserveAspectRatio="xMidYMid meet">
+              <g>
+                <circle cx="34" cy="30" r="3.5" fill="var(--accent)"/><circle cx="74" cy="22" r="3.5" fill="currentColor"/><circle cx="114" cy="38" r="3.5" fill="var(--accent-deep)"/>
+                <circle cx="52" cy="58" r="3.5" fill="currentColor"/><circle cx="96" cy="66" r="3.5" fill="var(--accent)"/><circle cx="134" cy="56" r="3.5" fill="currentColor"/>
+                <circle cx="30" cy="90" r="3.5" fill="var(--accent-deep)"/><circle cx="82" cy="96" r="3.5" fill="currentColor"/><circle cx="124" cy="88" r="3.5" fill="var(--accent)"/>
+              </g>
+              <path d="M160 24h146M160 24l-7-7M160 24l-7 7M160 60h146M160 60l-7-7M160 60l-7 7M160 96h146M160 96l-7-7M160 96l-7 7" fill="none" stroke="currentColor" stroke-width="1.2"/>
+              <g fill="none" stroke="currentColor" stroke-width="1.2">
+                <rect x="176" y="10" width="70" height="14"/><rect x="176" y="46" width="92" height="14"/><rect x="176" y="82" width="60" height="14"/>
+              </g>
+              <rect x="176" y="46" width="30" height="14" fill="var(--accent-deep)"/>
+            </svg>
+            <span class="case-card__legend mono">addresses → card_id → ratings</span>
+          </div>
+          <div class="case-card__body">
+            <div class="case-card__top mono"><span>CASE / 03</span><span class="case-card__tag">карты · организации</span></div>
+            <h3 class="case-card__title">Сбор и обновление рейтингов магазинов в Яндекс Картах</h3>
+            <p class="case-card__lead">По адресам клиента находились и проверялись карточки организаций, после чего собирались рейтинги, оценки, отзывы и статус.</p>
+            <ul class="case-card__facts">
+              <li class="fact"><b>9</b> регионов</li>
+              <li class="fact"><b>1&nbsp;310</b> проверенных строк / карточек</li>
+              <li class="fact">уникальные <b>card_id</b> и ссылки</li>
+            </ul>
+            <a class="case-card__link mono" href="https://github.com/petr-sidorov/yandex-maps-ratings-case-study" target="_blank" rel="noopener noreferrer">Подробнее о кейсе <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <article class="case-card case-card--w7" data-reveal>
+          <div class="case-card__viz" aria-hidden="true">
+            <svg viewBox="0 0 320 120" preserveAspectRatio="xMidYMid meet">
+              <g fill="none" stroke="currentColor" stroke-width="1.4">
+                <rect x="24" y="16" width="180" height="18"/>
+                <rect x="18" y="42" width="180" height="18"/>
+                <rect x="12" y="68" width="180" height="18"/>
+                <rect x="6" y="94" width="180" height="18"/>
+              </g>
+              <rect x="24" y="16" width="46" height="18" fill="var(--accent-deep)"/>
+              <rect x="18" y="42" width="46" height="18" fill="var(--accent-deep)"/>
+              <rect x="12" y="68" width="46" height="18" fill="var(--accent-deep)"/>
+              <rect x="6" y="94" width="46" height="18" fill="var(--accent)"/>
+              <g fill="none" stroke="currentColor" stroke-width="1.2">
+                <path d="M216 25h22M216 51h22M216 77h22M216 103h22"/>
+                <circle cx="248" cy="25" r="5"/><circle cx="248" cy="51" r="5"/><circle cx="248" cy="77" r="5" fill="var(--accent)"/><circle cx="248" cy="103" r="5" fill="var(--accent-deep)"/>
+                <path d="M248 30v16M248 56v16M248 82v16"/>
+              </g>
+              <path d="M266 38l8 8-8 8" fill="none" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M282 42v-12M282 62v-32" fill="none" stroke="var(--accent-bright)" stroke-width="1.6"/>
+              <circle cx="282" cy="26" r="3" fill="var(--accent-bright)"/>
+            </svg>
+            <span class="case-card__legend mono">даты → срез → накопление</span>
+          </div>
+          <div class="case-card__body">
+            <div class="case-card__top mono"><span>CASE / 04</span><span class="case-card__tag">мониторинг площадки</span></div>
+            <h3 class="case-card__title">Мониторинг лотов на площадке купли-продажи сайтов</h3>
+            <p class="case-card__lead">Регулярный сбор полного каталога и сохранение датированных срезов для накопительного мониторинга.</p>
+            <ul class="case-card__facts">
+              <li class="fact"><b>~17</b> месяцев наблюдений</li>
+              <li class="fact"><b>72</b> сохранённых среза</li>
+              <li class="fact">типично <b>2&nbsp;000+</b> активных лотов</li>
+              <li class="fact"><b>49</b> текстовых признаков</li>
+            </ul>
+            <a class="case-card__link mono" href="https://github.com/petr-sidorov/telderi-lot-monitor" target="_blank" rel="noopener noreferrer">Подробнее о кейсе <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ЗАДАЧИ ================= -->
+  <section class="section tasks" id="tasks">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <p class="kicker mono" data-reveal>02 / Задачи</p>
+          <h2 class="section__title" data-reveal>С чем можно к нам прийти</h2>
+        </div>
+        <p class="section__text section__text--aside" data-reveal>Не «какие технологии мы знаем», а какие задачи с внешними данными закрываем под рабочий процесс.</p>
+      </div>
+
+      <div class="tasks__grid">
+        <article class="task-card" data-reveal>
+          <span class="task-card__index mono" aria-hidden="true">01</span>
+          <span class="task-card__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3v10m-4-4 4 4 4-4M4 17v3h16v-3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+          </span>
+          <h3>Сбор из внешних источников</h3>
+          <p>Сайты, маркетплейсы, карты и другие публичные источники.</p>
+        </article>
+
+        <article class="task-card" data-reveal>
+          <span class="task-card__index mono" aria-hidden="true">02</span>
+          <span class="task-card__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 3v4c0 4 5 3 5 8v3m5-15v4c0 4-5 3-5 8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 18h8l-4 3-4-3Z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+          </span>
+          <h3>Нормализация и объединение</h3>
+          <p>Приведение разных источников к единой структуре и формату.</p>
+        </article>
+
+        <article class="task-card" data-reveal>
+          <span class="task-card__index mono" aria-hidden="true">03</span>
+          <span class="task-card__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3 4 6v5c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-3Z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m8.5 11.5 2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+          </span>
+          <h3>Проверка качества</h3>
+          <p>Дедупликация, проверки полноты, спорные случаи и human review там, где автоматизации недостаточно.</p>
+        </article>
+
+        <article class="task-card" data-reveal>
+          <span class="task-card__index mono" aria-hidden="true">04</span>
+          <span class="task-card__ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.6M4 12a8 8 0 1 0 2.3 5.6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M17.7 3.7v3.4h-3.4M6.3 20.3v-3.4h3.4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+          </span>
+          <h3>Регулярный мониторинг</h3>
+          <p>Повторные запуски, накопление истории и подготовка обновляемых выгрузок.</p>
+        </article>
+      </div>
+
+      <div class="tasks__results" data-reveal>
+        <p class="tasks__results-label mono">Результат для бизнеса</p>
+        <ul class="tasks__results-list">
+          <li>Excel</li>
+          <li>Google&nbsp;Sheets</li>
+          <li>CSV</li>
+          <li>структурированные данные</li>
+          <li>мониторинговый реестр</li>
+        </ul>
+        <p class="tasks__note mono">Каждый источник проверяем отдельно: универсального парсинга «любого сайта» не обещаем.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ПРОЦЕСС ================= -->
+  <section class="section process" id="process">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <p class="kicker kicker--light mono" data-reveal>03 / Процесс</p>
+          <h2 class="section__title section__title--light" data-reveal>Как строится работа</h2>
+        </div>
+        <p class="section__text section__text--light" data-reveal>Сначала фиксируем результат, объём и формат. Автоматизацию строим только под понятную задачу.</p>
+      </div>
+
+      <ol class="steps">
+        <li class="step" data-reveal>
+          <span class="step__node mono" aria-hidden="true">01</span>
+          <h3 class="step__title">Задача бизнеса</h3>
+          <p class="step__text">Что должно быть на выходе: отчёт, реестр, датасет или регулярная выгрузка.</p>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__node mono" aria-hidden="true">02</span>
+          <h3 class="step__title">Источник и поля</h3>
+          <p class="step__text">Из каких источников берём данные и какие поля попадают в результат.</p>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__node mono" aria-hidden="true">03</span>
+          <h3 class="step__title">Сбор данных</h3>
+          <p class="step__text">Настраиваем сбор под каждый тип источника и объём выборки.</p>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__node mono" aria-hidden="true">04</span>
+          <h3 class="step__title">Нормализация и QA</h3>
+          <p class="step__text">Единый формат, дедупликация, проверки полноты, спорные случаи — вручную.</p>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__node mono" aria-hidden="true">05</span>
+          <h3 class="step__title">Выгрузка / мониторинг</h3>
+          <p class="step__text">Готовая выгрузка в нужном формате или повторяемые запуски с историей.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================= ИНСТРУМЕНТЫ ================= -->
+  <section class="section tools" id="tools">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <p class="kicker mono" data-reveal>04 / Инструменты</p>
+          <h2 class="section__title" data-reveal>Веб-инструменты и автоматизация</h2>
+        </div>
+        <p class="section__text section__text--aside" data-reveal>Второе направление — небольшие внутренние веб-инструменты.</p>
+      </div>
+
+      <div class="tools__row">
+        <article class="tool-card" data-reveal>
+          <div class="tool-card__head">
+            <span class="tool-card__label mono">web app · внутренний инструмент</span>
+            <h3 class="tool-card__title">Kanban Tracker</h3>
+          </div>
+          <p class="tool-card__text">Небольшой внутренний веб-инструмент с регистрацией, ролями пользователей, досками, задачами и статусами.</p>
+          <ul class="tool-card__facts">
+            <li class="fact">Django</li>
+            <li class="fact">PostgreSQL</li>
+            <li class="fact">роли Manager / Member</li>
+            <li class="fact">production deployment</li>
+          </ul>
+          <p class="tool-card__note">Такой формат может использоваться как внутренний интерфейс вокруг операционных процессов и работы с данными.</p>
+          <div class="tool-card__links">
+            <a class="btn btn--ghost btn--sm" href="https://github.com/petr-sidorov/tracker-kanban" target="_blank" rel="noopener noreferrer">Репозиторий</a>
+            <a class="btn btn--accent btn--sm" href="https://web-production-a867b.up.railway.app/" target="_blank" rel="noopener noreferrer">Открыть демо</a>
+          </div>
+        </article>
+
+        <div class="tools__side" data-reveal aria-hidden="true">
+          <div class="tools__mock">
+            <span class="tools__mock-bar mono">tracker · board</span>
+            <div class="tools__cols">
+              <div class="tools__col"><i></i><i></i></div>
+              <div class="tools__col"><i></i><i class="hot"></i><i></i></div>
+              <div class="tools__col"><i></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= КОНТАКТ ================= -->
+  <section class="section contacts" id="contacts">
+    <div class="container contacts__inner">
+      <p class="kicker kicker--light mono" data-reveal>05 / Контакт</p>
+      <h2 class="section__title section__title--light contacts__title" data-reveal>Есть задача по внешним&nbsp;данным?</h2>
+      <p class="section__text section__text--light contacts__lead" data-reveal>Опишите источник, объём, нужные поля и формат результата. Сначала оценим, как задачу разумнее решить и какой объём автоматизации действительно нужен.</p>
+      <div class="contacts__actions" data-reveal>
+        <a class="btn btn--accent btn--lg" href="https://t.me/persconnect" target="_blank" rel="noopener noreferrer">Обсудить задачу</a>
+      </div>
+      <p class="contacts__who mono" data-reveal>Пётр Сидоров · Москва</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <p class="footer__name">Data Desk</p>
+      <p class="footer__desc">Автоматизация сбора и обработки внешних данных</p>
+    </div>
+    <p class="footer__person mono"><a class="footer__tg" href="https://t.me/persconnect" target="_blank" rel="noopener noreferrer">Пётр Сидоров · @persconnect</a></p>
+    <div class="footer__meta">
+      <p class="footer__copy mono">© <span id="year">2026</span> Data Desk</p>
+      <a class="footer__top mono" href="#top">Наверх <span aria-hidden="true">↑</span></a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
