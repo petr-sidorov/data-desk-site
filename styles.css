@@ -1136,28 +1136,21 @@ button {
 .tools__cap {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 11px;
   padding: 12px 15px;
-  font-size: 0.84rem;
+  font-size: 0.86rem;
   font-weight: 500;
   color: var(--graphite);
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  transition: border-color var(--transition);
 }
 
-.tools__cap:hover {
-  border-color: var(--accent);
-}
-
-.tools__cap::before {
-  content: "";
-  width: 7px;
-  height: 7px;
+.tools__cap-ico {
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
-  background: var(--accent);
-  transform: rotate(45deg);
+  color: var(--accent);
 }
 
 .tools__demo {
@@ -1552,21 +1545,56 @@ button {
   color: #8b98aa;
 }
 
-.footer__person {
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.footer__tg {
+.footer__contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+}
+
+.footer__contact-ico {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
   color: var(--accent-bright);
-  border-bottom: 1px solid rgba(125, 162, 255, 0.4);
-  transition: color var(--transition), border-color var(--transition);
+  transition: color var(--transition);
 }
 
-.footer__tg:hover {
+.footer__contact-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.footer__contact-label {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #67768b;
+}
+
+.footer__contact-value {
+  font-size: 0.82rem;
+  color: #d6dde8;
+  overflow-wrap: anywhere;
+  transition: color var(--transition);
+}
+
+.footer__contact:hover .footer__contact-value,
+.footer__contact:focus-visible .footer__contact-value {
   color: #fff;
-  border-color: #fff;
+}
+
+.footer__contact:hover .footer__contact-ico,
+.footer__contact:focus-visible .footer__contact-ico {
+  color: #fff;
 }
 
 .footer__meta {
@@ -1827,6 +1855,17 @@ button {
   .contact-form__submit .btn {
     width: 100%;
     min-width: 0;
+  }
+
+  .footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .footer__contacts {
+    width: 100%;
+    max-width: 320px;
   }
 }
 

@@ -119,10 +119,10 @@ export default async function handler(req, res) {
     return res.status(500).json({ ok: false, error: "Сервис временно недоступен. Попробуйте позже." });
   }
 
-  const sentAt = new Date().toISOString();
+  const sentAt = new Date().toISOString().replace("T", " ").slice(0, 19) + " UTC";
 
   const text = [
-    "Новая заявка с сайта Data Desk",
+    "Новая заявка — Data Desk",
     "",
     "Имя: " + (name || "—"),
     "Компания: " + (company || "—"),
@@ -131,25 +131,23 @@ export default async function handler(req, res) {
     "Описание задачи:",
     message,
     "",
-    "Отправлено: " + sentAt,
+    "Время получения заявки: " + sentAt,
   ].join("\n");
 
   const html =
-    '<h3 style="margin:0 0 12px;font-family:Arial,sans-serif;color:#10141c;">Новая заявка с сайта Data Desk</h3>' +
+    '<h3 style="margin:0 0 12px;font-family:Arial,sans-serif;color:#10141c;">Новая заявка — Data Desk</h3>' +
     '<table style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px;">' +
     emailRow("Имя", name, false) +
     emailRow("Компания", company, false) +
     emailRow("Контакт для ответа", contact, false) +
     emailRow("Описание задачи", message, true) +
-    "</table>" +
-    '<p style="margin:14px 0 0;font-family:Arial,sans-serif;font-size:12px;color:#576374;">Отправлено: ' +
-    escapeHtml(sentAt) +
-    "</p>";
+    emailRow("Время получения заявки", sentAt, false) +
+    "</table>";
 
   const payload = {
     from: fromEmail,
     to: [toEmail],
-    subject: "Заявка с сайта Data Desk",
+    subject: "Новая заявка — Data Desk",
     text,
     html,
   };
