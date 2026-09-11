@@ -47,9 +47,9 @@
         <li><a class="main-nav__link" href="#tasks">Задачи</a></li>
         <li><a class="main-nav__link" href="#process">Процесс</a></li>
         <li><a class="main-nav__link" href="#tools">Инструменты</a></li>
-        <li><a class="main-nav__link" href="#contacts">Контакт</a></li>
+        <li><a class="main-nav__link" href="#contact">Контакт</a></li>
       </ul>
-      <a class="btn btn--accent header__cta" href="https://t.me/persconnect" target="_blank" rel="noopener noreferrer">Обсудить задачу</a>
+      <a class="btn btn--accent header__cta" href="#contact">Обсудить задачу</a>
     </nav>
 
     <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Открыть меню">
@@ -68,7 +68,7 @@
         <h1 class="hero__title" data-reveal>Автоматизация сбора и&nbsp;обработки внешних данных для&nbsp;бизнеса</h1>
         <p class="hero__lead" data-reveal>Сайты, маркетплейсы, карты и&nbsp;нестандартные публичные источники. Сбор, нормализация, QA и&nbsp;готовая выгрузка под рабочий процесс.</p>
         <div class="hero__actions" data-reveal>
-          <a class="btn btn--accent" href="https://t.me/persconnect" target="_blank" rel="noopener noreferrer">Обсудить задачу</a>
+          <a class="btn btn--accent" href="#contact">Обсудить задачу</a>
           <a class="btn btn--ghost" href="#cases">Посмотреть кейсы</a>
         </div>
         <ul class="hero__chips" data-reveal>
@@ -477,14 +477,62 @@
   </section>
 
   <!-- ================= КОНТАКТ ================= -->
-  <section class="section contacts" id="contacts">
+  <section class="section contacts" id="contact">
     <div class="container contacts__inner">
       <p class="kicker kicker--light mono" data-reveal>05 / Контакт</p>
       <h2 class="section__title section__title--light contacts__title" data-reveal>Есть задача по внешним&nbsp;данным?</h2>
       <p class="section__text section__text--light contacts__lead" data-reveal>Опишите источник, объём, нужные поля и формат результата. Сначала оценим, как задачу разумнее решить и какой объём автоматизации действительно нужен.</p>
-      <div class="contacts__actions" data-reveal>
-        <a class="btn btn--accent btn--lg" href="https://t.me/persconnect" target="_blank" rel="noopener noreferrer">Обсудить задачу</a>
+
+      <div class="contacts__channels" data-reveal>
+        <a class="contacts__channel" href="https://t.me/persconnect" target="_blank" rel="noopener noreferrer">
+          <span class="contacts__channel-label mono">Telegram</span>
+          <span class="contacts__channel-value">@persconnect</span>
+        </a>
+        <a class="contacts__channel" href="https://web.max.ru/8638275" target="_blank" rel="noopener noreferrer">
+          <span class="contacts__channel-label mono">MAX</span>
+          <span class="contacts__channel-value">Написать в&nbsp;MAX</span>
+        </a>
       </div>
+
+      <form class="contact-form" id="contact-form" action="/api/contact" method="post" novalidate data-reveal>
+        <div class="contact-form__grid">
+          <div class="field">
+            <label class="field__label" for="cf-name">Имя</label>
+            <input class="field__input" type="text" id="cf-name" name="name" maxlength="120" autocomplete="name">
+          </div>
+          <div class="field">
+            <label class="field__label" for="cf-company">Компания</label>
+            <input class="field__input" type="text" id="cf-company" name="company" maxlength="160" autocomplete="organization">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="cf-contact">Контакт для ответа <span class="field__req" aria-hidden="true">*</span></label>
+          <input class="field__input" type="text" id="cf-contact" name="contact" maxlength="200" required autocomplete="email" placeholder="Email, телефон или @telegram">
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="cf-message">Описание задачи <span class="field__req" aria-hidden="true">*</span></label>
+          <textarea class="field__input field__textarea" id="cf-message" name="message" rows="5" maxlength="4000" required placeholder="Источник, объём, нужные поля, формат результата"></textarea>
+        </div>
+
+        <div class="cf-hp" aria-hidden="true">
+          <label for="cf-website">Оставьте это поле пустым</label>
+          <input type="text" id="cf-website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+        <input type="hidden" id="cf-ts" name="ts" value="">
+
+        <div class="contact-form__submit">
+          <button class="btn btn--accent" type="submit" id="cf-submit">Отправить заявку</button>
+        </div>
+
+        <p class="contact-form__consent" role="note">
+          Нейтральное место под согласие на&nbsp;обработку персональных данных.
+        </p>
+
+        <p class="contact-form__status" id="cf-status" role="status" aria-live="polite"></p>
+      </form>
+
       <p class="contacts__who mono" data-reveal>Москва</p>
     </div>
   </section>

@@ -111,6 +111,80 @@
   /* ---------- Footer year ---------- */
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  /* ---------- Contact form ---------- */
+  var form = document.getElementById("contact-form");
+
+  if (form) {
+    var tsField = document.getElementById("cf-ts");
+    var statusEl = document.getElementById("cf-status");
+    var submitBtn = document.getElementById("cf-submit");
+
+    if (tsField) tsField.value = String(Date.now());
+
+    function setStatus(type, text) {
+      if (!statusEl) return;
+      statusEl.textContent = text;
+      statusEl.classList.toggle("is-success", type === "success");
+      statusEl.classList.toggle("is-error", type === "error");
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var contact = (form.elements.contact.value || "").trim();
+      var message = (form.elements.message.value || "").trim();
+
+      if (!contact || !message) {
+        setStatus("error", "Заполните обязательные поля: контакт для ответа и описание задачи.");
+        return;
+      }
+
+      var payload = {
+        name: (form.elements.name.value || "").trim(),
+        company: (form.elements.company.value || "").trim(),
+        contact: contact,
+        message: message,
+        website: form.elements.website.value || "",
+        ts: tsField ? Number(tsField.value) : 0
+      };
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Отправка…";
+      }
+      setStatus("", "");
+
+      fetch(form.action, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      })
+        .then(function (res) {
+          return res.json()
+            .catch(function () { return {}; })
+            .then(function (data) { return { ok: res.ok, data: data }; });
+        })
+        .then(function (result) {
+          if (result.ok && result.data.ok) {
+            setStatus("success", result.data.message || "Заявка отправлена. Спасибо!");
+            form.reset();
+            if (tsField) tsField.value = String(Date.now());
+          } else {
+            setStatus("error", result.data.error || "Не удалось отправить заявку. Попробуйте ещё раз.");
+          }
+        })
+        .catch(function () {
+          setStatus("error", "Не удалось отправить заявку. Попробуйте ещё раз.");
+        })
+        .then(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Отправить заявку";
+          }
+        });
+    });
+  }
 })();
 
 
