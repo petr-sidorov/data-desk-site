@@ -437,38 +437,48 @@
       <div class="section__head">
         <div>
           <p class="kicker mono" data-reveal>04 / Инструменты</p>
-          <h2 class="section__title" data-reveal>Веб-инструменты и автоматизация</h2>
+          <h2 class="section__title" data-reveal>Интерфейсы и&nbsp;инструменты вокруг&nbsp;данных</h2>
         </div>
-        <p class="section__text section__text--aside" data-reveal>Второе направление — внутренние веб-инструменты.</p>
+        <p class="section__text section__text--aside" data-reveal>Не&nbsp;каждой задаче достаточно Excel или Google&nbsp;Sheets. Если данные нужно проверять, распределять, обновлять или использовать в&nbsp;работе команды, можем добавить рабочий слой вокруг данных: кабинет, панель или специализированный инструмент.</p>
       </div>
 
-      <div class="tools__row">
-        <article class="tool-card" data-reveal>
-          <div class="tool-card__head">
-            <span class="tool-card__label mono">web app · внутренний инструмент</span>
-            <h3 class="tool-card__title">Kanban Tracker</h3>
-          </div>
-          <p class="tool-card__text">Внутренний веб-инструмент с регистрацией, ролями пользователей, досками, задачами и статусами.</p>
-          <ul class="tool-card__facts">
-            <li class="fact">Django</li>
-            <li class="fact">PostgreSQL</li>
-            <li class="fact">роли Manager / Member</li>
-            <li class="fact">production deployment</li>
-          </ul>
-          <p class="tool-card__note">Такой формат может использоваться как внутренний интерфейс вокруг операционных процессов и работы с данными.</p>
-          <div class="tool-card__links">
-            <a class="btn btn--ghost btn--sm" href="https://github.com/petr-sidorov/tracker-kanban" target="_blank" rel="noopener noreferrer">Репозиторий</a>
-            <a class="btn btn--accent btn--sm" href="https://web-production-a867b.up.railway.app/" target="_blank" rel="noopener noreferrer">Открыть демо</a>
-          </div>
-        </article>
+      <ul class="tools__caps" data-reveal>
+        <li class="tools__cap">внутренние кабинеты</li>
+        <li class="tools__cap">панели и&nbsp;dashboards</li>
+        <li class="tools__cap">роли и&nbsp;доступы</li>
+        <li class="tools__cap">статусы и&nbsp;workflow</li>
+        <li class="tools__cap">ручная проверка данных</li>
+        <li class="tools__cap">формы и&nbsp;операционные инструменты</li>
+        <li class="tools__cap">специализированные веб-интерфейсы</li>
+        <li class="tools__cap">публичные страницы / лендинги</li>
+      </ul>
 
-        <div class="tools__side" data-reveal aria-hidden="true">
-          <div class="tools__mock">
-            <span class="tools__mock-bar mono">tracker · board</span>
-            <div class="tools__cols">
-              <div class="tools__col"><i></i><i></i></div>
-              <div class="tools__col"><i></i><i class="hot"></i><i></i></div>
-              <div class="tools__col"><i></i></div>
+      <div class="tools__demo">
+        <p class="tools__demo-label mono" data-reveal>Пример реализации</p>
+        <div class="tools__row">
+          <article class="tool-card" data-reveal>
+            <h3 class="tool-card__title">Kanban Tracker</h3>
+            <p class="tool-card__text">Пример внутреннего операционного интерфейса: пользователи и&nbsp;роли, рабочие доски, задачи и&nbsp;статусы. Такой формат можно использовать как слой управления, проверки или обработки данных внутри команды.</p>
+            <ul class="tool-card__facts">
+              <li class="fact">Django</li>
+              <li class="fact">PostgreSQL</li>
+              <li class="fact">роли Manager / Member</li>
+              <li class="fact">production deployment</li>
+            </ul>
+            <div class="tool-card__links">
+              <a class="btn btn--ghost btn--sm" href="https://github.com/petr-sidorov/tracker-kanban" target="_blank" rel="noopener noreferrer">Репозиторий</a>
+              <a class="btn btn--accent btn--sm" href="https://web-production-a867b.up.railway.app/" target="_blank" rel="noopener noreferrer">Открыть демо</a>
+            </div>
+          </article>
+
+          <div class="tools__side" data-reveal aria-hidden="true">
+            <div class="tools__mock">
+              <span class="tools__mock-bar mono">tracker · board</span>
+              <div class="tools__cols">
+                <div class="tools__col"><i></i><i></i></div>
+                <div class="tools__col"><i></i><i class="hot"></i><i></i></div>
+                <div class="tools__col"><i></i></div>
+              </div>
             </div>
           </div>
         </div>

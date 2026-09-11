@@ -1126,6 +1126,67 @@ button {
   background: var(--paper-2);
 }
 
+.tools__caps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 44px;
+}
+
+.tools__cap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--graphite);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color var(--transition);
+}
+
+.tools__cap:hover {
+  border-color: var(--accent);
+}
+
+.tools__cap::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  background: var(--accent);
+  transform: rotate(45deg);
+}
+
+.tools__demo {
+  margin-top: 48px;
+}
+
+.tools__demo-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--steel-soft);
+}
+
+.tools__demo-label::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: currentColor;
+}
+
+.tools__demo .tools__row {
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.4fr);
+  align-items: center;
+}
+
 .tools__row {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
@@ -1140,13 +1201,6 @@ button {
   border-left: 3px solid var(--accent);
   border-radius: var(--radius);
   box-shadow: var(--shadow-1);
-}
-
-.tool-card__label {
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--steel-soft);
 }
 
 .tool-card__title {
@@ -1170,16 +1224,6 @@ button {
   flex-wrap: wrap;
   gap: 9px;
   margin-top: 18px;
-}
-
-.tool-card__note {
-  margin-top: 18px;
-  padding: 14px 16px;
-  font-size: 0.86rem;
-  color: var(--graphite);
-  background: var(--paper);
-  border: 1px dashed var(--line);
-  border-left: 3px solid var(--accent);
 }
 
 .tool-card__links {
@@ -1240,6 +1284,23 @@ button {
 
 .tools__col i.hot {
   background: var(--accent);
+}
+
+/* Kanban demo = second-level proof, visually lighter than the base tool-card */
+
+.tools__demo .tool-card {
+  border-left: 3px solid var(--line);
+  background: var(--paper);
+  box-shadow: none;
+}
+
+.tools__demo .tool-card__title {
+  margin-top: 0;
+  font-size: clamp(1.15rem, 0.95rem + 0.8vw, 1.5rem);
+}
+
+.tools__demo .tool-card__text {
+  font-size: 0.92rem;
 }
 
 /* ---------- Contacts (dark final CTA) ---------- */
@@ -1585,6 +1646,14 @@ button {
     grid-template-columns: minmax(0, 1fr);
   }
 
+  .tools__demo .tools__row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tools__caps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .tools__side {
     min-height: 220px;
   }
@@ -1678,6 +1747,10 @@ button {
   .steps {
     grid-template-columns: minmax(0, 1fr);
     gap: 30px;
+  }
+
+  .tools__caps {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .step {
