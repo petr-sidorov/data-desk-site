@@ -223,3 +223,26 @@ if (!Number.isInteger(port) || port < 1 || port > 65535) {
 server.listen(port, "0.0.0.0", () => {
   console.log(`[server] listening on 0.0.0.0:${port}`);
 });
+
+let shuttingDown = false;
+
+function shutdown(signal) {
+  if (shuttingDown) return;
+  shuttingDown = true;
+  console.log(`[server] received ${signal}; shutting down`);
+  server.close((error) => {
+    if (error) {
+      console.error("[server] graceful shutdown failed", error.message);
+      process.exitCode = 1;
+    }
+  });
+
+  const timeout = setTimeout(() => {
+    console.error("[server] graceful shutdown timed out");
+    process.exit(1);
+  }, 10_000);
+  timeout.unref();
+}
+
+process.on("SIGTERM", () => shutdown("SIGTERM"));
+process.on("SIGINT", () => shutdown("SIGINT"));
