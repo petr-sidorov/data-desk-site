@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none" role="img" aria-labelledby="title">
+  <title id="title">CSV table file symbol</title>
+  <path d="M13 5h20l11 11v35H13z" fill="#e8f4ef" stroke="#217346" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M33 5v12h11" fill="#b9dfcc" stroke="#217346" stroke-width="2.5" stroke-linejoin="round"/>
+  <rect x="19" y="24" width="23" height="18" rx="2" fill="#fff" stroke="#217346" stroke-width="2"/>
+  <path d="M19 30h23M19 36h23M27 24v18M35 24v18" stroke="#67a98a" stroke-width="1.5"/>
+  <path d="M8 19v28a3 3 0 0 0 3 3h25" stroke="#1554d4" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
