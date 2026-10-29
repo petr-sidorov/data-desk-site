@@ -296,8 +296,7 @@ button {
 
 .brand__sub {
   font-size: 9.5px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  letter-spacing: 0.06em;
   color: var(--steel);
 }
 
@@ -815,24 +814,13 @@ button {
 .case-card__viz {
   position: relative;
   background: var(--dark);
-  color: #9fb2c9;
-  padding: 20px 22px 0;
+  padding: 0;
 }
 
-.case-card__viz svg {
+.case-card__image {
+  display: block;
   width: 100%;
   height: auto;
-}
-
-.case-card__legend {
-  display: inline-block;
-  margin-top: 10px;
-  padding-bottom: 12px;
-  font-size: 9px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #67768b;
-  overflow-wrap: anywhere;
 }
 
 .case-card__body {
@@ -1118,182 +1106,6 @@ button {
   line-height: 1.6;
   color: #a5b1c2;
   max-width: 30ch;
-}
-
-/* ---------- Tools ---------- */
-
-.tools {
-  background: var(--paper-2);
-}
-
-.tools__caps {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 44px;
-}
-
-.tools__cap {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  padding: 12px 15px;
-  font-size: 0.86rem;
-  font-weight: 500;
-  color: var(--graphite);
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-}
-
-.tools__cap-ico {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  color: var(--accent);
-}
-
-.tools__demo {
-  margin-top: 48px;
-}
-
-.tools__demo-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 16px;
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--steel-soft);
-}
-
-.tools__demo-label::before {
-  content: "";
-  width: 26px;
-  height: 1px;
-  background: currentColor;
-}
-
-.tools__demo .tools__row {
-  grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.4fr);
-  align-items: center;
-}
-
-.tools__row {
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
-  gap: 22px;
-  align-items: stretch;
-}
-
-.tool-card {
-  padding: clamp(26px, 3.4vw, 44px);
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-left: 3px solid var(--accent);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-1);
-}
-
-.tool-card__title {
-  margin-top: 10px;
-  font-family: var(--font-display);
-  font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2rem);
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: var(--graphite);
-}
-
-.tool-card__text {
-  margin-top: 12px;
-  max-width: 56ch;
-  font-size: 0.96rem;
-  color: var(--steel);
-}
-
-.tool-card__facts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-  margin-top: 18px;
-}
-
-.tool-card__links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 24px;
-}
-
-.tools__side {
-  display: flex;
-}
-
-.tools__mock {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 18px;
-  background: var(--dark);
-  border: 1px solid var(--graphite);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-1);
-}
-
-.tools__mock-bar {
-  font-size: 9px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #67768b;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--line-dark);
-}
-
-.tools__cols {
-  flex: 1;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 14px;
-}
-
-.tools__col {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 8px;
-  background: var(--dark-2);
-  border: 1px solid var(--line-dark);
-  border-radius: 3px;
-}
-
-.tools__col i {
-  display: block;
-  height: 26px;
-  background: rgba(255, 255, 255, 0.09);
-  border-radius: 2px;
-}
-
-.tools__col i.hot {
-  background: var(--accent);
-}
-
-/* Kanban demo = second-level proof, visually lighter than the base tool-card */
-
-.tools__demo .tool-card {
-  border-left: 3px solid var(--line);
-  background: var(--paper);
-  box-shadow: none;
-}
-
-.tools__demo .tool-card__title {
-  margin-top: 0;
-  font-size: clamp(1.15rem, 0.95rem + 0.8vw, 1.5rem);
-}
-
-.tools__demo .tool-card__text {
-  font-size: 0.92rem;
 }
 
 /* ---------- Contacts (dark final CTA) ---------- */
@@ -1688,21 +1500,6 @@ button {
     display: none;
   }
 
-  .tools__row {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .tools__demo .tools__row {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .tools__caps {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .tools__side {
-    min-height: 220px;
-  }
 }
 
 @media (max-width: 860px) {
@@ -1795,10 +1592,6 @@ button {
     gap: 30px;
   }
 
-  .tools__caps {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
   .step {
     display: grid;
     grid-template-columns: 54px minmax(0, 1fr);
@@ -1870,10 +1663,6 @@ button {
 }
 
 @media (max-width: 400px) {
-  .brand__sub {
-    display: none;
-  }
-
   .hero__actions .btn {
     width: 100%;
   }
